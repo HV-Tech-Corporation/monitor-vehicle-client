@@ -107,24 +107,21 @@
          <property name="styleSheet">
           <string notr="true">QPushButton {
 
-background-color: #255383;
-
-border: 2px solid #ffffff;
-border-radius: 5px;
-
+    background-color: #B22222; /* ������ �⺻ ���� */
+    border: 2px solid #ffffff; /* ���� �׵θ� */
+    border-radius: 5px;       /* �׵θ� �ձ۰� */
 }
 
 QPushButton:hover {
 
-background-color: #3a6898;
-
+    background-color: #CD5C5C; /* ���� ������ (Hover ��) */
 }
 
 QPushButton:pressed {
 
-background-color: #183554;
-
-}</string>
+    background-color: #8B0000; /* ���ο� ������ (Pressed ��) */
+}
+</string>
          </property>
          <property name="text">
           <string/>
@@ -159,7 +156,7 @@ background-color: #183554;
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="image.qrc">:/images/huntress-wizards-past-v0-f13b3wtzw7qb1.jpg</pixmap>
+       <pixmap resource="image.qrc">:/images/veda_background.png</pixmap>
       </property>
      </widget>
     </item>
@@ -396,96 +393,6 @@ background-color: #183554;
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="detection_button">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-
-background-color: #255383;
-
-border: 2px solid #ffffff;
-border-radius: 5px;
-
-}
-
-QPushButton:hover {
-
-background-color: #3a6898;
-
-}
-
-QPushButton:pressed {
-
-background-color: #183554;
-
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="image.qrc">
-           <normaloff>:/images/eye.png</normaloff>:/images/eye.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="ocr_button">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-
-background-color: #255383;
-
-border: 2px solid #ffffff;
-border-radius: 5px;
-
-}
-
-QPushButton:hover {
-
-background-color: #3a6898;
-
-}
-
-QPushButton:pressed {
-
-background-color: #183554;
-
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="image.qrc">
-           <normaloff>:/images/browser.png</normaloff>:/images/browser.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QPushButton" name="graph_button">
          <property name="minimumSize">
           <size>
@@ -521,51 +428,6 @@ background-color: #183554;
          <property name="icon">
           <iconset resource="image.qrc">
            <normaloff>:/images/chart.png</normaloff>:/images/chart.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="linecross_button">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-
-background-color: #255383;
-
-border: 2px solid #ffffff;
-border-radius: 5px;
-
-}
-
-QPushButton:hover {
-
-background-color: #3a6898;
-
-}
-
-QPushButton:pressed {
-
-background-color: #183554;
-
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="image.qrc">
-           <normaloff>:/images/running.png</normaloff>:/images/running.png</iconset>
          </property>
          <property name="iconSize">
           <size>

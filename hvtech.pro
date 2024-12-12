@@ -1,4 +1,4 @@
-QT       += core gui charts network concurrent xml
+QT       += core gui charts network concurrent xml sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,18 +23,26 @@ LIBS += -L/usr/lib/aarch64-linux-gnu/gstreamer-1.0 -lgstreamer-1.0
 # GLib 라이브러리 경로 추가 (필요한 경우)
 LIBS += -L/usr/lib/aarch64-linux-gnu -lglib-2.0
 
+INCLUDEPATH += inc
+
 SOURCES += \
-    gstreamer_utils.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    networkmanager.cpp \
-    video_thread.cpp
+    src/chartwidget.cpp \
+    src/customdial.cpp \
+    src/datastorage.cpp \
+    src/gstreamer_utils.cpp \
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/networkmanager.cpp \
+    src/video_thread.cpp
 
 HEADERS += \
-    gstreamer_utils.h \
-    mainwindow.h \
-    networkmanager.h \
-    video_thread.h
+    inc/chartwidget.h \
+    inc/customdial.h \
+    inc/datastorage.h \
+    inc/gstreamer_utils.h \
+    inc/mainwindow.h \
+    inc/networkmanager.h \
+    inc/video_thread.h
 
 FORMS += \
     mainwindow.ui
@@ -43,6 +51,10 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+OBJECTS_DIR = $$PWD/build/obj
+
+MOC_DIR = $$PWD/build/moc
 
 RESOURCES += \
     image.qrc
