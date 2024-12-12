@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_NO_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_NO_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -std=gnu++1z -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -Iinc -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtSql -I/usr/include/aarch64-linux-gnu/qt5/QtCore -Ibuild/moc -I. -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,10 +37,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = hvtech1.0.0
-DISTDIR = /home/pi/ver2/testbackup_ver5/.tmp/hvtech1.0.0
+DISTDIR = /home/pi/ver2/final_backup_ver8/build/obj/hvtech1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
-LIBS          = $(SUBLIBS) -L/usr/lib/aarch64-linux-gnu/gstreamer-1.0 -lgstreamer-1.0 -L/usr/lib/aarch64-linux-gnu -lglib-2.0 -L/usr/local/lib -lopencv_gapi -lopencv_stitching -lopencv_aruco -lopencv_barcode -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dnn_superres -lopencv_dpm -lopencv_face -lopencv_freetype -lopencv_fuzzy -lopencv_hdf -lopencv_hfs -lopencv_img_hash -lopencv_intensity_transform -lopencv_line_descriptor -lopencv_mcc -lopencv_quality -lopencv_rapid -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_superres -lopencv_optflow -lopencv_surface_matching -lopencv_tracking -lopencv_highgui -lopencv_datasets -lopencv_text -lopencv_plot -lopencv_videostab -lopencv_videoio -lopencv_wechat_qrcode -lopencv_xfeatures2d -lopencv_shape -lopencv_ml -lopencv_ximgproc -lopencv_video -lopencv_xobjdetect -lopencv_objdetect -lopencv_calib3d -lopencv_imgcodecs -lopencv_features2d -lopencv_dnn -lopencv_flann -lopencv_xphoto -lopencv_photo -lopencv_imgproc -lopencv_core /usr/lib/aarch64-linux-gnu/libQt5Charts.so /usr/lib/aarch64-linux-gnu/libQt5Widgets.so /usr/lib/aarch64-linux-gnu/libQt5Gui.so /usr/lib/aarch64-linux-gnu/libQt5Network.so /usr/lib/aarch64-linux-gnu/libQt5Concurrent.so /usr/lib/aarch64-linux-gnu/libQt5Xml.so /usr/lib/aarch64-linux-gnu/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) -L/usr/lib/aarch64-linux-gnu/gstreamer-1.0 -lgstreamer-1.0 -L/usr/lib/aarch64-linux-gnu -lglib-2.0 -L/usr/local/lib -lopencv_gapi -lopencv_stitching -lopencv_aruco -lopencv_barcode -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dnn_superres -lopencv_dpm -lopencv_face -lopencv_freetype -lopencv_fuzzy -lopencv_hdf -lopencv_hfs -lopencv_img_hash -lopencv_intensity_transform -lopencv_line_descriptor -lopencv_mcc -lopencv_quality -lopencv_rapid -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_superres -lopencv_optflow -lopencv_surface_matching -lopencv_tracking -lopencv_highgui -lopencv_datasets -lopencv_text -lopencv_plot -lopencv_videostab -lopencv_videoio -lopencv_wechat_qrcode -lopencv_xfeatures2d -lopencv_shape -lopencv_ml -lopencv_ximgproc -lopencv_video -lopencv_xobjdetect -lopencv_objdetect -lopencv_calib3d -lopencv_imgcodecs -lopencv_features2d -lopencv_dnn -lopencv_flann -lopencv_xphoto -lopencv_photo -lopencv_imgproc -lopencv_core /usr/lib/aarch64-linux-gnu/libQt5Charts.so /usr/lib/aarch64-linux-gnu/libQt5Widgets.so /usr/lib/aarch64-linux-gnu/libQt5Gui.so /usr/lib/aarch64-linux-gnu/libQt5Network.so /usr/lib/aarch64-linux-gnu/libQt5Concurrent.so /usr/lib/aarch64-linux-gnu/libQt5Xml.so /usr/lib/aarch64-linux-gnu/libQt5Sql.so /usr/lib/aarch64-linux-gnu/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -48,27 +48,39 @@ STRIP         = strip
 
 ####### Output directory
 
-OBJECTS_DIR   = ./
+OBJECTS_DIR   = build/obj/
 
 ####### Files
 
-SOURCES       = gstreamer_utils.cpp \
-		main.cpp \
-		mainwindow.cpp \
-		networkmanager.cpp \
-		video_thread.cpp qrc_image.cpp \
-		moc_mainwindow.cpp \
-		moc_networkmanager.cpp \
-		moc_video_thread.cpp
-OBJECTS       = gstreamer_utils.o \
-		main.o \
-		mainwindow.o \
-		networkmanager.o \
-		video_thread.o \
-		qrc_image.o \
-		moc_mainwindow.o \
-		moc_networkmanager.o \
-		moc_video_thread.o
+SOURCES       = src/chartwidget.cpp \
+		src/customdial.cpp \
+		src/datastorage.cpp \
+		src/gstreamer_utils.cpp \
+		src/main.cpp \
+		src/mainwindow.cpp \
+		src/networkmanager.cpp \
+		src/video_thread.cpp qrc_image.cpp \
+		build/moc/moc_chartwidget.cpp \
+		build/moc/moc_customdial.cpp \
+		build/moc/moc_datastorage.cpp \
+		build/moc/moc_mainwindow.cpp \
+		build/moc/moc_networkmanager.cpp \
+		build/moc/moc_video_thread.cpp
+OBJECTS       = build/obj/chartwidget.o \
+		build/obj/customdial.o \
+		build/obj/datastorage.o \
+		build/obj/gstreamer_utils.o \
+		build/obj/main.o \
+		build/obj/mainwindow.o \
+		build/obj/networkmanager.o \
+		build/obj/video_thread.o \
+		build/obj/qrc_image.o \
+		build/obj/moc_chartwidget.o \
+		build/obj/moc_customdial.o \
+		build/obj/moc_datastorage.o \
+		build/obj/moc_mainwindow.o \
+		build/obj/moc_networkmanager.o \
+		build/obj/moc_video_thread.o
 DIST          = /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -162,14 +174,20 @@ DIST          = /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		hvtech.pro gstreamer_utils.h \
-		mainwindow.h \
-		networkmanager.h \
-		video_thread.h gstreamer_utils.cpp \
-		main.cpp \
-		mainwindow.cpp \
-		networkmanager.cpp \
-		video_thread.cpp
+		hvtech.pro inc/chartwidget.h \
+		inc/customdial.h \
+		inc/datastorage.h \
+		inc/gstreamer_utils.h \
+		inc/mainwindow.h \
+		inc/networkmanager.h \
+		inc/video_thread.h src/chartwidget.cpp \
+		src/customdial.cpp \
+		src/datastorage.cpp \
+		src/gstreamer_utils.cpp \
+		src/main.cpp \
+		src/mainwindow.cpp \
+		src/networkmanager.cpp \
+		src/video_thread.cpp
 QMAKE_TARGET  = hvtech
 DESTDIR       = 
 TARGET        = hvtech
@@ -388,8 +406,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents image.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents gstreamer_utils.h mainwindow.h networkmanager.h video_thread.h $(DISTDIR)/
-	$(COPY_FILE) --parents gstreamer_utils.cpp main.cpp mainwindow.cpp networkmanager.cpp video_thread.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/chartwidget.h inc/customdial.h inc/datastorage.h inc/gstreamer_utils.h inc/mainwindow.h inc/networkmanager.h inc/video_thread.h $(DISTDIR)/
+	$(COPY_FILE) --parents src/chartwidget.cpp src/customdial.cpp src/datastorage.cpp src/gstreamer_utils.cpp src/main.cpp src/mainwindow.cpp src/networkmanager.cpp src/video_thread.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -419,6 +437,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_image.cpp
 qrc_image.cpp: image.qrc \
 		/usr/lib/qt5/bin/rcc \
+		images/needle.png \
 		images/browser.png \
 		images/rewind.png \
 		images/pause.png \
@@ -428,7 +447,7 @@ qrc_image.cpp: image.qrc \
 		images/free-icon-font-running-6627966.png \
 		images/free-icon-font-portrait-3917494.png \
 		images/h_modi3.png \
-		images/huntress-wizards-past-v0-f13b3wtzw7qb1.jpg \
+		images/veda_background.png \
 		images/exit.png \
 		images/free-icon-font-browser-3914415.png \
 		images/free-icon-font-chart-histogram-5528038.png \
@@ -442,31 +461,50 @@ qrc_image.cpp: image.qrc \
 		images/stop.png
 	/usr/lib/qt5/bin/rcc -name image image.qrc -o qrc_image.cpp
 
-compiler_moc_predefs_make_all: moc_predefs.h
+compiler_moc_predefs_make_all: build/moc/moc_predefs.h
 compiler_moc_predefs_clean:
-	-$(DEL_FILE) moc_predefs.h
-moc_predefs.h: /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
-	g++ -pipe -O2 -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+	-$(DEL_FILE) build/moc/moc_predefs.h
+build/moc/moc_predefs.h: /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+	g++ -pipe -O2 -std=gnu++1z -Wall -Wextra -dM -E -o build/moc/moc_predefs.h /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_networkmanager.cpp moc_video_thread.cpp
+compiler_moc_header_make_all: build/moc/moc_chartwidget.cpp build/moc/moc_customdial.cpp build/moc/moc_datastorage.cpp build/moc/moc_mainwindow.cpp build/moc/moc_networkmanager.cpp build/moc/moc_video_thread.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_networkmanager.cpp moc_video_thread.cpp
-moc_mainwindow.cpp: mainwindow.h \
-		video_thread.h \
-		networkmanager.h \
-		moc_predefs.h \
+	-$(DEL_FILE) build/moc/moc_chartwidget.cpp build/moc/moc_customdial.cpp build/moc/moc_datastorage.cpp build/moc/moc_mainwindow.cpp build/moc/moc_networkmanager.cpp build/moc/moc_video_thread.cpp
+build/moc/moc_chartwidget.cpp: inc/chartwidget.h \
+		inc/customdial.h \
+		build/moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/testbackup_ver5/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/testbackup_ver5 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/final_backup_ver8/build/moc/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/final_backup_ver8 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/home/pi/ver2/final_backup_ver8/inc -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtSql -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include inc/chartwidget.h -o build/moc/moc_chartwidget.cpp
 
-moc_networkmanager.cpp: networkmanager.h \
-		moc_predefs.h \
+build/moc/moc_customdial.cpp: inc/customdial.h \
+		build/moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/testbackup_ver5/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/testbackup_ver5 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include networkmanager.h -o moc_networkmanager.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/final_backup_ver8/build/moc/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/final_backup_ver8 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/home/pi/ver2/final_backup_ver8/inc -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtSql -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include inc/customdial.h -o build/moc/moc_customdial.cpp
 
-moc_video_thread.cpp: video_thread.h \
-		moc_predefs.h \
+build/moc/moc_datastorage.cpp: inc/datastorage.h \
+		build/moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/testbackup_ver5/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/testbackup_ver5 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include video_thread.h -o moc_video_thread.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/final_backup_ver8/build/moc/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/final_backup_ver8 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/home/pi/ver2/final_backup_ver8/inc -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtSql -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include inc/datastorage.h -o build/moc/moc_datastorage.cpp
+
+build/moc/moc_mainwindow.cpp: inc/mainwindow.h \
+		inc/video_thread.h \
+		inc/networkmanager.h \
+		inc/chartwidget.h \
+		inc/customdial.h \
+		inc/datastorage.h \
+		build/moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/final_backup_ver8/build/moc/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/final_backup_ver8 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/home/pi/ver2/final_backup_ver8/inc -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtSql -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include inc/mainwindow.h -o build/moc/moc_mainwindow.cpp
+
+build/moc/moc_networkmanager.cpp: inc/networkmanager.h \
+		build/moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/final_backup_ver8/build/moc/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/final_backup_ver8 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/home/pi/ver2/final_backup_ver8/inc -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtSql -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include inc/networkmanager.h -o build/moc/moc_networkmanager.cpp
+
+build/moc/moc_video_thread.cpp: inc/video_thread.h \
+		build/moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/ver2/final_backup_ver8/build/moc/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pi/ver2/final_backup_ver8 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/home/pi/ver2/final_backup_ver8/inc -I/usr/local/include/opencv4 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCharts -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtConcurrent -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtSql -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include inc/video_thread.h -o build/moc/moc_video_thread.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -489,37 +527,62 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 ####### Compile
 
-gstreamer_utils.o: gstreamer_utils.cpp gstreamer_utils.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gstreamer_utils.o gstreamer_utils.cpp
+build/obj/chartwidget.o: src/chartwidget.cpp inc/chartwidget.h \
+		inc/customdial.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/chartwidget.o src/chartwidget.cpp
 
-main.o: main.cpp mainwindow.h \
-		video_thread.h \
-		networkmanager.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
+build/obj/customdial.o: src/customdial.cpp inc/customdial.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/customdial.o src/customdial.cpp
 
-mainwindow.o: mainwindow.cpp mainwindow.h \
-		video_thread.h \
-		networkmanager.h \
+build/obj/datastorage.o: src/datastorage.cpp inc/datastorage.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/datastorage.o src/datastorage.cpp
+
+build/obj/gstreamer_utils.o: src/gstreamer_utils.cpp inc/gstreamer_utils.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/gstreamer_utils.o src/gstreamer_utils.cpp
+
+build/obj/main.o: src/main.cpp inc/mainwindow.h \
+		inc/video_thread.h \
+		inc/networkmanager.h \
+		inc/chartwidget.h \
+		inc/customdial.h \
+		inc/datastorage.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/main.o src/main.cpp
+
+build/obj/mainwindow.o: src/mainwindow.cpp inc/mainwindow.h \
+		inc/video_thread.h \
+		inc/networkmanager.h \
+		inc/chartwidget.h \
+		inc/customdial.h \
+		inc/datastorage.h \
 		ui_mainwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/mainwindow.o src/mainwindow.cpp
 
-networkmanager.o: networkmanager.cpp networkmanager.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o networkmanager.o networkmanager.cpp
+build/obj/networkmanager.o: src/networkmanager.cpp inc/networkmanager.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/networkmanager.o src/networkmanager.cpp
 
-video_thread.o: video_thread.cpp video_thread.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o video_thread.o video_thread.cpp
+build/obj/video_thread.o: src/video_thread.cpp inc/video_thread.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/video_thread.o src/video_thread.cpp
 
-qrc_image.o: qrc_image.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_image.o qrc_image.cpp
+build/obj/qrc_image.o: qrc_image.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/qrc_image.o qrc_image.cpp
 
-moc_mainwindow.o: moc_mainwindow.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+build/obj/moc_chartwidget.o: build/moc/moc_chartwidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/moc_chartwidget.o build/moc/moc_chartwidget.cpp
 
-moc_networkmanager.o: moc_networkmanager.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_networkmanager.o moc_networkmanager.cpp
+build/obj/moc_customdial.o: build/moc/moc_customdial.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/moc_customdial.o build/moc/moc_customdial.cpp
 
-moc_video_thread.o: moc_video_thread.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_video_thread.o moc_video_thread.cpp
+build/obj/moc_datastorage.o: build/moc/moc_datastorage.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/moc_datastorage.o build/moc/moc_datastorage.cpp
+
+build/obj/moc_mainwindow.o: build/moc/moc_mainwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/moc_mainwindow.o build/moc/moc_mainwindow.cpp
+
+build/obj/moc_networkmanager.o: build/moc/moc_networkmanager.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/moc_networkmanager.o build/moc/moc_networkmanager.cpp
+
+build/obj/moc_video_thread.o: build/moc/moc_video_thread.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/moc_video_thread.o build/moc/moc_video_thread.cpp
 
 ####### Install
 
