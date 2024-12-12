@@ -1,5 +1,5 @@
 ## Client
-This project is designed to analyze the probability of vehicle accidents using computer vision.
+A monitoring system that combines live data visualization with dynamic risk analysis, featuring a custom gauge dial and historical data chart.
 
 ## TEAM
 - 장윤재 (Jang Yun Jae)
@@ -7,12 +7,34 @@ This project is designed to analyze the probability of vehicle accidents using c
 - 조세기 (Jo Segi)
   - Work : Qt Development and Network Programming
 
-## Functions
+## UI
 
-| Function | Description |
-|---------|--------------|
-| BestShot |  License, Vehicle type (Car, Bus, Mortorcycle)
-| Risk Analysis | Status output, Accident cost graph |
+![Best_readme](https://github.com/user-attachments/assets/b7d30c39-d69f-433e-8772-30b459983bfc) ![Risk_readme](https://github.com/user-attachments/assets/eae685d5-d9bb-49c0-b5f2-1f2911524fd2)
+
+
+
+### 1. Stream Control
+
+- **Play**: Starts the video stream.
+- **Pause**: Pauses the video stream.
+- **Rewind**: Rewind the video stream.
+
+### 2. Best Shot and Risk Analysis Graph
+
+- **Best Shot**: BestShot captures and stores images of detected objects by extracting the area within their boundary boxes, while also displaying key information about the objects, such as class and identification details.
+
+- **Risk Analysis** Graph: Accident Cost Graph dynamically visualizes current road risk levels using a combination of a gauge-style dial and real-time trend graph.
+
+### 3. Best Shot
+
+- **Image Name**: The name of the captured frame.
+- **Class**: The classification of the detected object ("bus", "car", "mortorcycle").
+- **OCR**: Extracts and displays vehicle license plate numbers from the frame using OCR technology.
+
+### 4. Risk Analysis Graph
+- **Risk Dial and Status Label**: It provides visual information based on the current state through a dial and status labels.
+
+- **Risk Analysis Graph**: The Risk Analysis Graph leverages advanced graph theory algorithms, including Minimum Spanning Tree (MST) and Minimum Spanning Forest (MSF), to calculate and visualize risk levels.
 
 ## Accident Cost Algorithm
 ### Class Definition and Initialization:
@@ -40,47 +62,3 @@ This project is designed to analyze the probability of vehicle accidents using c
 - This code uses Kruskal's MST algorithm, an important algorithm in graph theory, to find the minimum spanning tree in an actual graph, extend it to form a minimum spanning forest, and analyze the characteristics of the graph through additional weight calculations.
 ### Result:
 This approach can be applied in various fields such as network design, communication, and optimal pathfinding.
-
-
-## Installation
-
-
-### Package  (Required)
-
-- [TVM](https://github.com/apache/tvm) 
-
-```bash
-git clone --recursive https://github.com/apache/tvm.git
-cd tvm
-git submodule init
-git submodule update --recursive
-mkdir -p build
-cd build
-
-
-
-```
-- [OpenCV](https://github.com/opencv/opencv) 
-- [Boost](https://github.com/boostorg/boost) 
-
-#### Ansible Lint (Optional)
-
-- Ansible Lint is used to lint the role for both Ansible best practices and potential Ansible/YAML issues.
-- Instructions on how to install Ansible Lint can be found in the [Ansible Lint website](https://ansible.readthedocs.io/projects/lint/installing/).
-- Once installed, using Ansible Lint is as easy as running:
-
-  ```bash
-  ansible-lint
-  ```
-
-- For ease of use, you can install and/or upgrade Ansible Lint by running the following command on your Ansible host:
-
-  ```bash
-  pip install -r https://raw.githubusercontent.com/nginxinc/ansible-role-nginx/main/.github/workflows/requirements/requirements_ansible_lint.txt
-  ```
-
-#### Molecule (Optional)
-
-- Molecule is used to test the various functionalities of the role.
-- Instructions on how to install Molecule can be found in the [Molecule website](https://molecule.readthedocs.io/en/latest/installation.html). *You will also need to install the Molecule plugins package and the Docker Python SDK.*
-- To run any of the NGINX Plus Molecule tests, you must first copy your NGINX Plus license to the role's [`files/license`](/files/license/) directory.
